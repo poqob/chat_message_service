@@ -2,10 +2,26 @@ package com.db;
 
 import java.util.List;
 
-public interface Db {
-    public void sendMessage(String message);
+import com.model.MessageModel;
 
-    public List<MessageModel> getChat();
+public class Db implements IDb {
 
-    public MessageModel getMessage();
+    @Override
+    public void sendMessage(String message) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'sendMessage'");
+    }
+
+    @Override
+    public List<MessageModel> getChat() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getChat'");
+    }
+
+    @Override
+    public MessageModel getMessage() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getMessage'");
+    }
+
 }
