@@ -6,22 +6,34 @@ import com.model.MessageModel;
 
 public class Db implements IDb {
 
+    final IDb db = new PostgreSQLJDBCConnection();
+
+    // Db tipinde static bir değişken
+    private static Db db2;
+
+    private Db() {
+    }
+
+    // (factory metod)
+    public static Db Db() {
+        if (db2 == null)
+            db2 = new Db();
+        return db2;
+    }
+
     @Override
     public void sendMessage(String message) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'sendMessage'");
+        db.sendMessage(message);
     }
 
     @Override
     public List<MessageModel> getChat() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getChat'");
+        return db.getChat();
     }
 
     @Override
     public MessageModel getMessage() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getMessage'");
+        return db.getMessage();
     }
 
 }
